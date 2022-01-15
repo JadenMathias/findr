@@ -1,21 +1,19 @@
-// ignore_for_file: prefer_const_constructors
-
+// ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, prefer_const_constructors
+import 'package:findr/pages/signup.dart';
 import 'package:findr/styles.dart';
 import 'package:findr/widgets/customButton.dart';
-import 'package:findr/widgets/textbox.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:findr/widgets/textbox.dart';
 
-import 'login.dart';
-
-class SignupPage extends StatefulWidget {
-  const SignupPage({Key? key}) : super(key: key);
+class ForgotPasswordPage extends StatefulWidget {
+  const ForgotPasswordPage({Key? key}) : super(key: key);
 
   @override
-  _SignupPageState createState() => _SignupPageState();
+  _ForgotPasswordPageState createState() => _ForgotPasswordPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +24,7 @@ class _SignupPageState extends State<SignupPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Welcome to Findr! 👋',
+              'Forgot password? 🙄',
               style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
@@ -35,7 +33,7 @@ class _SignupPageState extends State<SignupPage> {
             Container(
               margin: EdgeInsets.only(top: 10),
               child: Text(
-                "We're glad to see you've chosen Findr! Sign up below to continue",
+                "We will send a password reset link to your email",
                 textAlign: TextAlign.start,
                 style: GoogleFonts.poppins(
                     color: Colors.grey,
@@ -43,15 +41,11 @@ class _SignupPageState extends State<SignupPage> {
                     fontSize: 15),
               ),
             ),
-            CustomText(hint: 'Username', icon: Icons.person, isPassword: false),
-            CustomText(hint: 'Email', icon: Icons.email, isPassword: false),
-            CustomText(hint: 'Password', icon: Icons.lock, isPassword: true),
-            CustomText(
-                hint: 'Repeat password', icon: Icons.lock, isPassword: true),
+            CustomText(hint: 'Enter Email', icon: Icons.email, isPassword: false),
             Expanded(child: Container()),
             CustomButton(
               color: accentOne,
-              text: 'Sign Up',
+              text: 'Send Recovery E-mail',
             ),
             Container(
               height: 100,
@@ -59,7 +53,7 @@ class _SignupPageState extends State<SignupPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Already a member? ',
+                    'Back to Signup? ',
                     style: GoogleFonts.poppins(
                         color: Colors.white,
                         fontWeight: FontWeight.w500,
@@ -70,10 +64,10 @@ class _SignupPageState extends State<SignupPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginPage()));
+                              builder: (context) => const SignupPage()));
                     },
                     child: Text(
-                      'Sign in.',
+                      'Click Here',
                       style: GoogleFonts.poppins(
                           color: accentOne,
                           fontWeight: FontWeight.w500,
